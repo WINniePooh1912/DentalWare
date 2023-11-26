@@ -32,8 +32,11 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         };
         MenuBar = new javax.swing.JMenuBar();
         menuLogIn = new javax.swing.JMenu();
+        mItemLogIn = new javax.swing.JMenuItem();
         menuAgenda = new javax.swing.JMenu();
+        mItemAgenda = new javax.swing.JMenuItem();
         menuAboutUs = new javax.swing.JMenu();
+        mItemAboutUs = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -44,6 +47,7 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Welcome");
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 
@@ -51,22 +55,44 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGap(0, 1318, Short.MAX_VALUE)
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
+            .addGap(0, 612, Short.MAX_VALUE)
         );
 
         MenuBar.setBackground(new java.awt.Color(222, 212, 210));
 
         menuLogIn.setText("Log in");
+
+        mItemLogIn.setText("Log in");
+        mItemLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemLogInActionPerformed(evt);
+            }
+        });
+        menuLogIn.add(mItemLogIn);
+
         MenuBar.add(menuLogIn);
 
         menuAgenda.setText("Agenda");
+
+        mItemAgenda.setText("Agenda");
+        mItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemAgendaActionPerformed(evt);
+            }
+        });
+        menuAgenda.add(mItemAgenda);
+
         MenuBar.add(menuAgenda);
 
         menuAboutUs.setText("About Us");
+
+        mItemAboutUs.setText("About us");
+        menuAboutUs.add(mItemAboutUs);
+
         MenuBar.add(menuAboutUs);
 
         setJMenuBar(MenuBar);
@@ -77,20 +103,30 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(desktopPane)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(desktopPane)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAgendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemAgendaActionPerformed
+
+    private void mItemLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemLogInActionPerformed
+        frmInternalLogIn logIn = new frmInternalLogIn();
+        desktopPane.add(logIn);
+        logIn.show();
+    }//GEN-LAST:event_mItemLogInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,6 +170,9 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem mItemAboutUs;
+    private javax.swing.JMenuItem mItemAgenda;
+    private javax.swing.JMenuItem mItemLogIn;
     private javax.swing.JMenu menuAboutUs;
     private javax.swing.JMenu menuAgenda;
     private javax.swing.JMenu menuLogIn;
