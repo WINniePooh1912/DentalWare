@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Interfaces;
 
-/**
- *
- * @author vicky
- */
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 public class frmGeneralWelcome extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmGeneralWelcome
-     */
     public frmGeneralWelcome() {
         initComponents();
     }
@@ -28,20 +19,77 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        ImageIcon icon = new ImageIcon("src/images/bgDesktop.jpg");
+        Image img = icon.getImage();
+        desktopPane = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g) {
+                g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        MenuBar = new javax.swing.JMenuBar();
+        menuLogIn = new javax.swing.JMenu();
+        menuAgenda = new javax.swing.JMenu();
+        menuAboutUs = new javax.swing.JMenu();
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desktopPane.setBackground(new java.awt.Color(222, 212, 210));
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 269, Short.MAX_VALUE)
+        );
+
+        MenuBar.setBackground(new java.awt.Color(222, 212, 210));
+
+        menuLogIn.setText("Log in");
+        MenuBar.add(menuLogIn);
+
+        menuAgenda.setText("Agenda");
+        MenuBar.add(menuAgenda);
+
+        menuAboutUs.setText("About Us");
+        MenuBar.add(menuAboutUs);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -80,5 +128,14 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu menuAboutUs;
+    private javax.swing.JMenu menuAgenda;
+    private javax.swing.JMenu menuLogIn;
     // End of variables declaration//GEN-END:variables
 }
