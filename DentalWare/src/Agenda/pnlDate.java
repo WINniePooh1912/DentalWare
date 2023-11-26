@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.util.Calendar;
 
-public class pnlDate extends javax.swing.JPanel {
+public class pnlDate extends javax.swing.JLayeredPane {
 
     private int month, year;
     
