@@ -4,6 +4,7 @@ package Agenda;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.Calendar;
+import java.util.Date;
 
 public class pnlDate extends javax.swing.JLayeredPane {
 
@@ -44,17 +45,27 @@ public class pnlDate extends javax.swing.JLayeredPane {
         
         calendar.add(Calendar.DATE, -startDay);
         
+        Today today = getToday();
+        
         for(Component com:getComponents()) {
             Cell cell = (Cell)com;
             if(!cell.isTitle()) {
                 cell.setText(calendar.get(Calendar.DATE) + "");
                 cell.setDate(calendar.getTime());
                 cell.currentMonth(calendar.get(Calendar.MONTH) == month - 1);
+                if(today.isToday(new Today(calendar.get(Calendar.DATE), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR))))
+                    cell.setAsToday();
                 calendar.add(Calendar.DATE, 1);
-                
             }
         }
     }
+    
+    private Today getToday() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        return new Today(calendar.get(Calendar.DATE), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
