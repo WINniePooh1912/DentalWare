@@ -1,18 +1,18 @@
 package Interfaces;
 
 import Agenda.*;
-import dentalware.Queue;
+//import dentalware.Queue;
 import java.awt.Color;
 
 public class frmAgenda extends javax.swing.JFrame {
 
     frmGeneralWelcome generalMenu;
-    Queue queue;
+    //Queue queue;
     
-    public frmAgenda(frmGeneralWelcome generalMenu, Queue queue) {
+    public frmAgenda(frmGeneralWelcome generalMenu) {
         initComponents();
         this.generalMenu = generalMenu;
-        this.queue = queue;
+        // this.queue = queue;
         
         Color colorbg = new Color(222, 212, 210);
         getContentPane().setBackground(colorbg);

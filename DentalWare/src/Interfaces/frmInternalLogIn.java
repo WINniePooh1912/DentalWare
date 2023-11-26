@@ -1,13 +1,28 @@
 package Interfaces;
 
+import dentalware.User;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class frmInternalLogIn extends javax.swing.JInternalFrame {
-
-    public frmInternalLogIn() {
+    
+    private int size = 5;
+    private User[] aUsuarios = new User[size];
+    frmGeneralWelcome generalMenu;
+    
+    public frmInternalLogIn(frmGeneralWelcome generalMenu) {
         initComponents();
+        this.generalMenu = generalMenu;
+        
+        /**String name, int age, char sex, String address, 
+            String telephone, String user, String password, int type*/
+        aUsuarios[0] = new User("Francisco Robles", 34, 'M', "Paseos del sol #24", 
+                "33 1625 8596", "admin", "98765", 0);
+        aUsuarios[1] = new User("Daniela Sandoval", 30, 'F', "Av. Rincones de soledad", 
+                "33 4859 8456", "doctor", "45654", 1);
+        aUsuarios[2] = new User("Miranda Ortega", 25, 'F', "Osa mayor 8957", 
+                "33 1523 4865", "assis", "1234", 2);
         
         Color colorbg = new Color(222, 212, 210);
         getContentPane().setBackground(colorbg);
@@ -69,6 +84,11 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         btLogIn.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btLogIn.setForeground(new java.awt.Color(255, 255, 255));
         btLogIn.setText("Log in");
+        btLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLogInActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +135,38 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
+        // obtener textos de usuario y contraseña
+        String usr = tfUser.getText();
+        String ctr = pfPassword.getText();
+
+        // bandera para determinar validez de usuario
+        boolean valido = false;
+        // validar el acceso o no
+        for(int i = 0; i < size; i++) {
+            if (aUsuarios[i].getUser().equals(usr) && aUsuarios[i].getPassword().equals(ctr)) {
+                if(aUsuarios[i].getType() == 0) {
+                    frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(aUsuarios[i]);
+                    frmAdmin.setVisible(true);
+                    generalMenu.setVisible(false);
+                    valido = true;
+                } else if(aUsuarios[i].getType() == 1) {
+                    /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i], this);
+                    frmDoct.setVisible(true);
+                    this.setVisible(false);
+                    valido = true;*/
+                } else if(aUsuarios[i].getType() == 2) {
+                    /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i], this);
+                    frmAssis.setVisible(true);
+                    this.setVisible(false);
+                    valido = true;*/
+                }
+            }
+        }
+        if (!valido) {
+            //jlbMensaje.setText("Cuenta sin acceso.");
+        }
+    }//GEN-LAST:event_btLogInActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btChangePassword;
