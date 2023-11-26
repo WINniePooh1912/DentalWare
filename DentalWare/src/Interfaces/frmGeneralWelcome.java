@@ -1,11 +1,13 @@
 package Interfaces;
 
+import dentalware.Queue;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class frmGeneralWelcome extends javax.swing.JFrame {
 
+    Queue queue = new Queue();
     public frmGeneralWelcome() {
         initComponents();
     }
@@ -119,7 +121,9 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAgendaActionPerformed
-        // TODO add your handling code here:
+        frmAgenda agenda = new frmAgenda(this, queue);
+        this.setVisible(false);
+        agenda.setVisible(true);
     }//GEN-LAST:event_mItemAgendaActionPerformed
 
     private void mItemLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemLogInActionPerformed

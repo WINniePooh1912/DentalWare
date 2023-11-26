@@ -9,44 +9,62 @@
         </Property>
       </Properties>
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="menuLogIn">
+        <Menu class="javax.swing.JMenu" name="menuDoctors">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Log in"/>
+            <Property name="text" type="java.lang.String" value="Doctors"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mItemLogIn">
+            <MenuItem class="javax.swing.JMenuItem" name="mItemAddDoct">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Log in"/>
+                <Property name="text" type="java.lang.String" value="Add doctor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mItemLogInActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mItemAddDoctActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mItemShowDoct">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show doctors"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuAgenda">
+        <Menu class="javax.swing.JMenu" name="menuAssistants">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agenda"/>
+            <Property name="text" type="java.lang.String" value="Assistants"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mItemAgenda">
+            <MenuItem class="javax.swing.JMenuItem" name="mItemAddAssis">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Agenda"/>
+                <Property name="text" type="java.lang.String" value="Add assitants"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mItemAgendaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mItemAddAssisActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mItemShowAssis">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show assistants"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuAboutUs">
+        <Menu class="javax.swing.JMenu" name="menuSupplies">
           <Properties>
-            <Property name="text" type="java.lang.String" value="About Us"/>
+            <Property name="text" type="java.lang.String" value="Supplies"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mItemAboutUs">
+            <MenuItem class="javax.swing.JMenuItem" name="mItemDelSup">
               <Properties>
-                <Property name="text" type="java.lang.String" value="About us"/>
+                <Property name="text" type="java.lang.String" value="Delete supply"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mItemDelSupActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mItemShowSup">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show supplies"/>
               </Properties>
             </MenuItem>
           </SubComponents>

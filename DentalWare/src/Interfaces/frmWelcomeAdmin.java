@@ -27,12 +27,15 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
             }
         };
         MenuBar = new javax.swing.JMenuBar();
-        menuLogIn = new javax.swing.JMenu();
-        mItemLogIn = new javax.swing.JMenuItem();
-        menuAgenda = new javax.swing.JMenu();
-        mItemAgenda = new javax.swing.JMenuItem();
-        menuAboutUs = new javax.swing.JMenu();
-        mItemAboutUs = new javax.swing.JMenuItem();
+        menuDoctors = new javax.swing.JMenu();
+        mItemAddDoct = new javax.swing.JMenuItem();
+        mItemShowDoct = new javax.swing.JMenuItem();
+        menuAssistants = new javax.swing.JMenu();
+        mItemAddAssis = new javax.swing.JMenuItem();
+        mItemShowAssis = new javax.swing.JMenuItem();
+        menuSupplies = new javax.swing.JMenu();
+        mItemDelSup = new javax.swing.JMenuItem();
+        mItemShowSup = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,36 +54,50 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
 
         MenuBar.setBackground(new java.awt.Color(222, 212, 210));
 
-        menuLogIn.setText("Log in");
+        menuDoctors.setText("Doctors");
 
-        mItemLogIn.setText("Log in");
-        mItemLogIn.addActionListener(new java.awt.event.ActionListener() {
+        mItemAddDoct.setText("Add doctor");
+        mItemAddDoct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mItemLogInActionPerformed(evt);
+                mItemAddDoctActionPerformed(evt);
             }
         });
-        menuLogIn.add(mItemLogIn);
+        menuDoctors.add(mItemAddDoct);
 
-        MenuBar.add(menuLogIn);
+        mItemShowDoct.setText("Show doctors");
+        menuDoctors.add(mItemShowDoct);
 
-        menuAgenda.setText("Agenda");
+        MenuBar.add(menuDoctors);
 
-        mItemAgenda.setText("Agenda");
-        mItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+        menuAssistants.setText("Assistants");
+
+        mItemAddAssis.setText("Add assitants");
+        mItemAddAssis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mItemAgendaActionPerformed(evt);
+                mItemAddAssisActionPerformed(evt);
             }
         });
-        menuAgenda.add(mItemAgenda);
+        menuAssistants.add(mItemAddAssis);
 
-        MenuBar.add(menuAgenda);
+        mItemShowAssis.setText("Show assistants");
+        menuAssistants.add(mItemShowAssis);
 
-        menuAboutUs.setText("About Us");
+        MenuBar.add(menuAssistants);
 
-        mItemAboutUs.setText("About us");
-        menuAboutUs.add(mItemAboutUs);
+        menuSupplies.setText("Supplies");
 
-        MenuBar.add(menuAboutUs);
+        mItemDelSup.setText("Delete supply");
+        mItemDelSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemDelSupActionPerformed(evt);
+            }
+        });
+        menuSupplies.add(mItemDelSup);
+
+        mItemShowSup.setText("Show supplies");
+        menuSupplies.add(mItemShowSup);
+
+        MenuBar.add(menuSupplies);
 
         setJMenuBar(MenuBar);
 
@@ -104,15 +121,19 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mItemLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemLogInActionPerformed
+    private void mItemAddDoctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddDoctActionPerformed
         frmInternalLogIn logIn = new frmInternalLogIn();
         desktopPane.add(logIn);
         logIn.show();
-    }//GEN-LAST:event_mItemLogInActionPerformed
+    }//GEN-LAST:event_mItemAddDoctActionPerformed
 
-    private void mItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAgendaActionPerformed
+    private void mItemAddAssisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddAssisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mItemAgendaActionPerformed
+    }//GEN-LAST:event_mItemAddAssisActionPerformed
+
+    private void mItemDelSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemDelSupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemDelSupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,11 +173,14 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenuItem mItemAboutUs;
-    private javax.swing.JMenuItem mItemAgenda;
-    private javax.swing.JMenuItem mItemLogIn;
-    private javax.swing.JMenu menuAboutUs;
-    private javax.swing.JMenu menuAgenda;
-    private javax.swing.JMenu menuLogIn;
+    private javax.swing.JMenuItem mItemAddAssis;
+    private javax.swing.JMenuItem mItemAddDoct;
+    private javax.swing.JMenuItem mItemDelSup;
+    private javax.swing.JMenuItem mItemShowAssis;
+    private javax.swing.JMenuItem mItemShowDoct;
+    private javax.swing.JMenuItem mItemShowSup;
+    private javax.swing.JMenu menuAssistants;
+    private javax.swing.JMenu menuDoctors;
+    private javax.swing.JMenu menuSupplies;
     // End of variables declaration//GEN-END:variables
 }
