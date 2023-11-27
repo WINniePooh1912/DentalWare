@@ -3,12 +3,14 @@ package Interfaces;
 import dentalware.User;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class frmInternalLogIn extends javax.swing.JInternalFrame {
-    
-    private int size = 5;
-    private User[] aUsuarios = new User[size];
+
+    int counter = 3;
+    private User[] aUsuarios = new User[5];
     frmGeneralWelcome generalMenu;
     
     public frmInternalLogIn(frmGeneralWelcome generalMenu) {
@@ -58,7 +60,6 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(222, 212, 210));
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
         setTitle("Log In");
         setToolTipText("");
 
@@ -66,14 +67,26 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         lbUserIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         lbUser.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbUser.setText("User:");
 
         lbPassword.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbPassword.setText("Password: ");
 
         tfUser.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        tfUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfUserKeyTyped(evt);
+            }
+        });
 
         pfPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pfPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pfPasswordKeyTyped(evt);
+            }
+        });
 
         btChangePassword.setBackground(new java.awt.Color(34, 111, 138));
         btChangePassword.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -96,21 +109,24 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btChangePassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tfUser, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(pfPassword))
-                    .addComponent(btLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btChangePassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(66, 66, 66)
+                .addComponent(btLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbUserIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(97, 97, 97))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfUser, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(pfPassword))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,12 +145,54 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btChangePassword)
                     .addComponent(btLogIn))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void authUser() {
+        // obtener textos de usuario y contraseña
+        String usr = tfUser.getText();
+        String ctr = pfPassword.getText();
+        boolean valido = false;
+        // System.out.println("Sí inicio we");
+        
+        if(!usr.isEmpty() && !ctr.isEmpty()) {
+            // System.out.println("Sí comienzo a buscar we");
+            // bandera para determinar validez de usuario
+            // validar el acceso o no
+            for(int i = 0; i < counter; i++) {
+                // System.out.println("buscando");
+                if (aUsuarios[i].getUser().equals(usr) && aUsuarios[i].getPassword().equals(ctr)) {
+                    if(aUsuarios[i].getType() == 0) {
+                        frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(aUsuarios[i]);
+                        frmAdmin.setVisible(true);
+                        generalMenu.setVisible(false);
+                        valido = true;
+                    } else if(aUsuarios[i].getType() == 1) {
+                        /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
+                        frmDoct.setVisible(true);
+                        generalMenu.setVisible(false);
+                        valido = true;*/
+                    } else if(aUsuarios[i].getType() == 2) {
+                        /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
+                        frmAssis.setVisible(true);
+                        generalMenu.setVisible(false);
+                        valido = true;*/
+                    }
+                    break;
+                }
+            }
+            if (!valido) {
+                // System.out.println("Sí llegué we");
+                JOptionPane.showInternalMessageDialog(this, "El usuario o la contraseña\ningresados son incorrectos", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showInternalMessageDialog(this, "Asegurese de llenar\ntodos los campos", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
         // obtener textos de usuario y contraseña
         String usr = tfUser.getText();
@@ -143,7 +201,7 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         // bandera para determinar validez de usuario
         boolean valido = false;
         // validar el acceso o no
-        for(int i = 0; i < size; i++) {
+        for(int i = 0; i < aUsuarios.length; i++) {
             if (aUsuarios[i].getUser().equals(usr) && aUsuarios[i].getPassword().equals(ctr)) {
                 if(aUsuarios[i].getType() == 0) {
                     frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(aUsuarios[i]);
@@ -151,22 +209,62 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
                     generalMenu.setVisible(false);
                     valido = true;
                 } else if(aUsuarios[i].getType() == 1) {
-                    /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i], this);
+                    /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
                     frmDoct.setVisible(true);
-                    this.setVisible(false);
+                    generalMenu.setVisible(false);
                     valido = true;*/
                 } else if(aUsuarios[i].getType() == 2) {
-                    /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i], this);
+                    /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
                     frmAssis.setVisible(true);
-                    this.setVisible(false);
+                    generalMenu.setVisible(false);
                     valido = true;*/
                 }
             }
         }
         if (!valido) {
-            //jlbMensaje.setText("Cuenta sin acceso.");
+            JOptionPane.showInternalMessageDialog(this, "El usuario o la contraseña ingresados son incorrectos", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btLogInActionPerformed
+
+    private void pfPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pfPasswordKeyTyped
+        int size = 5;
+        char charac = evt.getKeyChar();
+        if(charac == KeyEvent.VK_ENTER)
+            authUser();
+        else {
+            if(!Character.isDigit(charac) && charac != KeyEvent.VK_BACK_SPACE) {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showInternalMessageDialog(this, "Solo capturar números", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
+            }
+            
+            if(pfPassword.getText().length() >= size && charac != KeyEvent.VK_ENTER) {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showInternalMessageDialog(this, "Máximo 5 dígitos.", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_pfPasswordKeyTyped
+
+    private void tfUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfUserKeyTyped
+        int size = 15;
+        char charac = evt.getKeyChar();
+        if(charac == KeyEvent.VK_ENTER)
+            authUser();
+        else {
+            if(!Character.isLetter(charac) && charac != KeyEvent.VK_BACK_SPACE) {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showInternalMessageDialog(this, "Solo capturar letras", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
+            }
+            
+            if(pfPassword.getText().length() >= size && charac != KeyEvent.VK_ENTER) {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showInternalMessageDialog(this, "Máximo 5 dígitos.", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_tfUserKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btChangePassword;

@@ -1,13 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Interfaces;
 
-import dentalware.User;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+/**
+ *
+ * @author vicky
+ */
+public class frmWelcomeDoctor extends javax.swing.JFrame {
 
-public class frmWelcomeAdmin extends javax.swing.JFrame {
-
-    public frmWelcomeAdmin(User aUsuarios) {
+    /**
+     * Creates new form frmWelcomeDoctor
+     */
+    public frmWelcomeDoctor() {
         initComponents();
     }
 
@@ -20,6 +28,9 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         ImageIcon icon = new ImageIcon("src/images/bgDesktop.jpg");
         Image img = icon.getImage();
         desktopPane = new javax.swing.JDesktopPane(){
@@ -38,8 +49,15 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         mItemDelSup = new javax.swing.JMenuItem();
         mItemShowSup = new javax.swing.JMenuItem();
 
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Welcome Admin");
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(222, 212, 210));
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 
@@ -51,14 +69,14 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
+            .addGap(0, 658, Short.MAX_VALUE)
         );
 
         MenuBar.setBackground(new java.awt.Color(222, 212, 210));
 
-        menuDoctors.setText("Doctors");
+        menuDoctors.setText("Patients");
 
-        mItemAddDoct.setText("Add doctor");
+        mItemAddDoct.setText("Add patient");
         mItemAddDoct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mItemAddDoctActionPerformed(evt);
@@ -66,14 +84,14 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         });
         menuDoctors.add(mItemAddDoct);
 
-        mItemShowDoct.setText("Show doctors");
+        mItemShowDoct.setText("Show patients");
         menuDoctors.add(mItemShowDoct);
 
         MenuBar.add(menuDoctors);
 
-        menuAssistants.setText("Assistants");
+        menuAssistants.setText("Agenda");
 
-        mItemAddAssis.setText("Add assitants");
+        mItemAddAssis.setText("Add appointment");
         mItemAddAssis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mItemAddAssisActionPerformed(evt);
@@ -81,14 +99,14 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         });
         menuAssistants.add(mItemAddAssis);
 
-        mItemShowAssis.setText("Show assistants");
+        mItemShowAssis.setText("Show Agenda");
         menuAssistants.add(mItemShowAssis);
 
         MenuBar.add(menuAssistants);
 
         menuSupplies.setText("Supplies");
 
-        mItemDelSup.setText("Delete supply");
+        mItemDelSup.setText("Request Supplies");
         mItemDelSup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mItemDelSupActionPerformed(evt);
@@ -121,11 +139,10 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mItemAddDoctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddDoctActionPerformed
-        
+
     }//GEN-LAST:event_mItemAddDoctActionPerformed
 
     private void mItemAddAssisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddAssisActionPerformed
@@ -136,9 +153,47 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mItemDelSupActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmWelcomeDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmWelcomeDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmWelcomeDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmWelcomeDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmWelcomeDoctor().setVisible(true);
+            }
+        });
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem mItemAddAssis;
     private javax.swing.JMenuItem mItemAddDoct;
     private javax.swing.JMenuItem mItemDelSup;
