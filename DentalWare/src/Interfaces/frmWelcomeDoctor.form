@@ -143,7 +143,7 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xd;&#xa;    public void paintComponent(Graphics g) {&#xd;&#xa;        g.drawImage(img, 0, 0, getWidth(), getHeight(), this);&#xd;&#xa;    }&#xd;&#xa;}"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(&quot;src/images/bgDesktop.jpg&quot;);&#xd;&#xa;Image img = icon.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(&quot;src/images/bgDesktop.jpg&quot;);&#xd;&#xa;Image img = icon.getImage();&#xd;&#xa;"/>
       </AuxValues>
 
       <Layout>
