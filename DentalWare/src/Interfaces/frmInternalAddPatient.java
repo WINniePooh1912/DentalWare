@@ -36,6 +36,7 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
         pfPassword = new javax.swing.JPasswordField();
         btChangePassword = new javax.swing.JButton();
         btLogIn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jInternalFrame1.setBackground(new java.awt.Color(222, 212, 210));
         jInternalFrame1.setClosable(true);
@@ -133,15 +134,23 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(jLabel1)
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(334, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,6 +205,7 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
     private javax.swing.JButton btChangePassword;
     private javax.swing.JButton btLogIn;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbPassword;
     private javax.swing.JLabel lbUser;
     private javax.swing.JLabel lbUserIcon;
