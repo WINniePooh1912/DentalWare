@@ -1,14 +1,14 @@
+
 package Interfaces;
 
-// import dentalware.Queue;
+import dentalware.User;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class frmGeneralWelcome extends javax.swing.JFrame {
+public class frmWelcomeDoctor extends javax.swing.JFrame {
 
-    // Queue queue = new Queue();
-    public frmGeneralWelcome() {
+    public frmWelcomeDoctor(User aUsuarios) {
         initComponents();
     }
 
@@ -24,7 +24,6 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         ImageIcon icon = new ImageIcon("src/images/bgDesktop.jpg");
         Image img = icon.getImage();
         desktopPane = new javax.swing.JDesktopPane(){
@@ -33,12 +32,15 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
             }
         };
         MenuBar = new javax.swing.JMenuBar();
-        menuLogIn = new javax.swing.JMenu();
-        mItemLogIn = new javax.swing.JMenuItem();
-        menuAgenda = new javax.swing.JMenu();
-        mItemAgenda = new javax.swing.JMenuItem();
-        menuAboutUs = new javax.swing.JMenu();
-        mItemAboutUs = new javax.swing.JMenuItem();
+        menuDoctors = new javax.swing.JMenu();
+        mItemAddDoct = new javax.swing.JMenuItem();
+        mItemShowDoct = new javax.swing.JMenuItem();
+        menuAssistants = new javax.swing.JMenu();
+        mItemAddAssis = new javax.swing.JMenuItem();
+        mItemShowAssis = new javax.swing.JMenuItem();
+        menuSupplies = new javax.swing.JMenu();
+        mItemDelSup = new javax.swing.JMenuItem();
+        mItemShowSup = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -46,10 +48,11 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         jMenu4.setText("Edit");
         jMenuBar2.add(jMenu4);
 
-        jMenuItem1.setText("jMenuItem1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Welcome");
+        setTitle("Welcome Doctor");
+        setAlwaysOnTop(true);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(222, 212, 210));
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 
@@ -61,41 +64,55 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
+            .addGap(0, 658, Short.MAX_VALUE)
         );
 
         MenuBar.setBackground(new java.awt.Color(222, 212, 210));
 
-        menuLogIn.setText("Log in");
+        menuDoctors.setText("Patients");
 
-        mItemLogIn.setText("Log in");
-        mItemLogIn.addActionListener(new java.awt.event.ActionListener() {
+        mItemAddDoct.setText("Add patient");
+        mItemAddDoct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mItemLogInActionPerformed(evt);
+                mItemAddDoctActionPerformed(evt);
             }
         });
-        menuLogIn.add(mItemLogIn);
+        menuDoctors.add(mItemAddDoct);
 
-        MenuBar.add(menuLogIn);
+        mItemShowDoct.setText("Show patients");
+        menuDoctors.add(mItemShowDoct);
 
-        menuAgenda.setText("Agenda");
+        MenuBar.add(menuDoctors);
 
-        mItemAgenda.setText("Agenda");
-        mItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+        menuAssistants.setText("Agenda");
+
+        mItemAddAssis.setText("Add appointment");
+        mItemAddAssis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mItemAgendaActionPerformed(evt);
+                mItemAddAssisActionPerformed(evt);
             }
         });
-        menuAgenda.add(mItemAgenda);
+        menuAssistants.add(mItemAddAssis);
 
-        MenuBar.add(menuAgenda);
+        mItemShowAssis.setText("Show Agenda");
+        menuAssistants.add(mItemShowAssis);
 
-        menuAboutUs.setText("About Us");
+        MenuBar.add(menuAssistants);
 
-        mItemAboutUs.setText("About us");
-        menuAboutUs.add(mItemAboutUs);
+        menuSupplies.setText("Supplies");
 
-        MenuBar.add(menuAboutUs);
+        mItemDelSup.setText("Request Supplies");
+        mItemDelSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemDelSupActionPerformed(evt);
+            }
+        });
+        menuSupplies.add(mItemDelSup);
+
+        mItemShowSup.setText("Show supplies");
+        menuSupplies.add(mItemShowSup);
+
+        MenuBar.add(menuSupplies);
 
         setJMenuBar(MenuBar);
 
@@ -120,17 +137,17 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAgendaActionPerformed
-        frmAgenda agenda = new frmAgenda(this);
-        this.setVisible(false);
-        agenda.setVisible(true);
-    }//GEN-LAST:event_mItemAgendaActionPerformed
+    private void mItemAddDoctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddDoctActionPerformed
 
-    private void mItemLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemLogInActionPerformed
-        frmInternalLogIn logIn = new frmInternalLogIn(this);
-        desktopPane.add(logIn);
-        logIn.show();
-    }//GEN-LAST:event_mItemLogInActionPerformed
+    }//GEN-LAST:event_mItemAddDoctActionPerformed
+
+    private void mItemAddAssisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddAssisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemAddAssisActionPerformed
+
+    private void mItemDelSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemDelSupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemDelSupActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;
@@ -138,12 +155,14 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem mItemAboutUs;
-    private javax.swing.JMenuItem mItemAgenda;
-    private javax.swing.JMenuItem mItemLogIn;
-    private javax.swing.JMenu menuAboutUs;
-    private javax.swing.JMenu menuAgenda;
-    private javax.swing.JMenu menuLogIn;
+    private javax.swing.JMenuItem mItemAddAssis;
+    private javax.swing.JMenuItem mItemAddDoct;
+    private javax.swing.JMenuItem mItemDelSup;
+    private javax.swing.JMenuItem mItemShowAssis;
+    private javax.swing.JMenuItem mItemShowDoct;
+    private javax.swing.JMenuItem mItemShowSup;
+    private javax.swing.JMenu menuAssistants;
+    private javax.swing.JMenu menuDoctors;
+    private javax.swing.JMenu menuSupplies;
     // End of variables declaration//GEN-END:variables
 }
