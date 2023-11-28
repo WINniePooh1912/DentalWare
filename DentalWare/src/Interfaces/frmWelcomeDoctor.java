@@ -50,6 +50,7 @@ public class frmWelcomeDoctor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome Doctor");
+        setAlwaysOnTop(true);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(222, 212, 210));
 
