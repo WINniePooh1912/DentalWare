@@ -171,15 +171,15 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
                         generalMenu.setVisible(false);
                         valido = true;
                     } else if(aUsuarios[i].getType() == 1) {
-                        /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
+                        frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
                         frmDoct.setVisible(true);
                         generalMenu.setVisible(false);
-                        valido = true;*/
+                        valido = true;
                     } else if(aUsuarios[i].getType() == 2) {
-                        /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
+                        frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
                         frmAssis.setVisible(true);
                         generalMenu.setVisible(false);
-                        valido = true;*/
+                        valido = true;
                     }
                     break;
                 }
@@ -194,36 +194,7 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
     }
     
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
-        // obtener textos de usuario y contraseña
-        String usr = tfUser.getText();
-        String ctr = pfPassword.getText();
-
-        // bandera para determinar validez de usuario
-        boolean valido = false;
-        // validar el acceso o no
-        for(int i = 0; i < aUsuarios.length; i++) {
-            if (aUsuarios[i].getUser().equals(usr) && aUsuarios[i].getPassword().equals(ctr)) {
-                if(aUsuarios[i].getType() == 0) {
-                    frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(aUsuarios[i]);
-                    frmAdmin.setVisible(true);
-                    generalMenu.setVisible(false);
-                    valido = true;
-                } else if(aUsuarios[i].getType() == 1) {
-                    /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
-                    frmDoct.setVisible(true);
-                    generalMenu.setVisible(false);
-                    valido = true;*/
-                } else if(aUsuarios[i].getType() == 2) {
-                    /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
-                    frmAssis.setVisible(true);
-                    generalMenu.setVisible(false);
-                    valido = true;*/
-                }
-            }
-        }
-        if (!valido) {
-            JOptionPane.showInternalMessageDialog(this, "El usuario o la contraseña ingresados son incorrectos", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
-        }
+        authUser();
     }//GEN-LAST:event_btLogInActionPerformed
 
     private void pfPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pfPasswordKeyTyped

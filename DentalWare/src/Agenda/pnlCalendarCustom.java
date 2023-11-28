@@ -27,7 +27,7 @@ public class pnlCalendarCustom extends javax.swing.JPanel {
                     }
                     Date date = new Date();
                     SimpleDateFormat tf = new SimpleDateFormat("hh:mm aa");
-                    SimpleDateFormat df = new SimpleDateFormat("dd/MM-yyyy");
+                    SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                     String time = tf.format(date);
                     lbTime.setText(time.split(" ")[0]);
                     lbType.setText(time.split(" ")[1]);
@@ -80,7 +80,6 @@ public class pnlCalendarCustom extends javax.swing.JPanel {
         lbTime.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lbTime.setForeground(new java.awt.Color(222, 212, 210));
         lbTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbTime.setText("9:32");
 
         lbType.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbType.setForeground(new java.awt.Color(222, 212, 210));
