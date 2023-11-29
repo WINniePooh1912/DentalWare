@@ -62,6 +62,7 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         lbGender1 = new javax.swing.JLabel();
         rbFem1 = new javax.swing.JRadioButton();
         rbMale1 = new javax.swing.JRadioButton();
+        tfName4 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(222, 212, 210));
         setClosable(true);
@@ -70,8 +71,11 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
 
         lbName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbName.setText("Name/s:");
+        lbName.setText("Full Name:");
 
+        tfName.setForeground(new java.awt.Color(153, 153, 153));
+        tfName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tfName.setText("Names ");
         tfName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +216,16 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         rbMale1.setBackground(new java.awt.Color(222, 212, 210));
         rbMale1.setText("No");
 
+        tfName4.setForeground(new java.awt.Color(153, 153, 153));
+        tfName4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tfName4.setText("Last Names ");
+        tfName4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        tfName4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfName4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,7 +286,9 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(30, 30, 30)
-                                .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfName4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lbName1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -296,7 +312,8 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbName))
+                    .addComponent(lbName)
+                    .addComponent(tfName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbAge)
@@ -381,6 +398,10 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbFem1ActionPerformed
 
+    private void tfName4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfName4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfName4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -417,5 +438,6 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tfName1;
     private javax.swing.JTextField tfName2;
     private javax.swing.JTextField tfName3;
+    private javax.swing.JTextField tfName4;
     // End of variables declaration//GEN-END:variables
 }

@@ -93,7 +93,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lbName" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="tfName" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="tfName" min="-2" pref="149" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="tfName4" min="-2" pref="169" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lbName1" min="-2" pref="139" max="-2" attributes="0"/>
@@ -128,6 +130,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tfName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfName4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -204,11 +207,16 @@
           <Font name="Tahoma" size="13" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="Name/s:"/>
+        <Property name="text" type="java.lang.String" value="Full Name:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfName">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Names "/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2"/>
@@ -527,6 +535,23 @@
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfName4">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Last Names "/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true" thickness="2"/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfName4ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
