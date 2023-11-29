@@ -40,14 +40,17 @@ public class frmInternalPatientInfo extends javax.swing.JInternalFrame {
         lbFileNumber.setText("File #000000");
 
         btnPayment.setBackground(new java.awt.Color(34, 111, 138));
+        btnPayment.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnPayment.setForeground(new java.awt.Color(255, 255, 255));
         btnPayment.setText("Payment History");
 
         btnQuoting.setBackground(new java.awt.Color(34, 111, 138));
+        btnQuoting.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuoting.setForeground(new java.awt.Color(255, 255, 255));
         btnQuoting.setText("Quoting");
 
         btnMedical.setBackground(new java.awt.Color(34, 111, 138));
+        btnMedical.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnMedical.setForeground(new java.awt.Color(255, 255, 255));
         btnMedical.setText("Medical History");
 
@@ -60,9 +63,9 @@ public class frmInternalPatientInfo extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnPayment)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(btnQuoting)
-                .addGap(59, 59, 59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMedical)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()

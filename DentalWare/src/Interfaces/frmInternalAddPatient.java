@@ -135,11 +135,16 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("Patient Information");
 
+        tfName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNameActionPerformed(evt);
             }
         });
+
+        tfSurname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        tfAge.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         rbFem.setBackground(new java.awt.Color(222, 212, 210));
         rbFem.setText("Female");
@@ -223,7 +228,7 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
                     .addComponent(lbGender)
                     .addComponent(rbMale)
                     .addComponent(rbFem))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
