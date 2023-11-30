@@ -41,6 +41,10 @@ public class frmInternalAddSupply extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 0));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Request Supplies");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel1.setText("REQUEST SUPPLIES");
