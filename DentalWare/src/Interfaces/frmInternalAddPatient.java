@@ -1,20 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Interfaces;
 
-/**
- *
- * @author vicky
- */
 public class frmInternalAddPatient extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form frmInternalAddPatient
-     */
     public frmInternalAddPatient() {
         initComponents();
     }
@@ -36,11 +24,16 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
         pfPassword = new javax.swing.JPasswordField();
         btChangePassword = new javax.swing.JButton();
         btLogIn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lbTitle = new javax.swing.JLabel();
+        tfName = new javax.swing.JTextField();
+        tfSurname = new javax.swing.JTextField();
+        tfAge = new javax.swing.JTextField();
+        rbFem = new javax.swing.JRadioButton();
+        rbMale = new javax.swing.JRadioButton();
+        lbName = new javax.swing.JLabel();
+        lbSurname = new javax.swing.JLabel();
+        lbAge = new javax.swing.JLabel();
+        lbGender = new javax.swing.JLabel();
 
         jInternalFrame1.setBackground(new java.awt.Color(222, 212, 210));
         jInternalFrame1.setClosable(true);
@@ -134,115 +127,152 @@ public class frmInternalAddPatient extends javax.swing.JInternalFrame {
         );
 
         setBackground(new java.awt.Color(222, 212, 210));
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
 
-        jLabel1.setText("jLabel1");
+        lbTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbTitle.setText("Patient Information");
 
-        jLabel2.setText("jLabel2");
+        tfName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        tfName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNameActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("jLabel3");
+        tfSurname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel4.setText("jLabel4");
+        tfAge.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel5.setText("jLabel5");
+        rbFem.setBackground(new java.awt.Color(222, 212, 210));
+        rbFem.setText("Female");
+        rbFem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbFemActionPerformed(evt);
+            }
+        });
+
+        rbMale.setBackground(new java.awt.Color(222, 212, 210));
+        rbMale.setText("Male");
+
+        lbName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbName.setText("Name/s:");
+
+        lbSurname.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbSurname.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbSurname.setText("Surname:");
+
+        lbAge.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbAge.setText("Age:");
+
+        lbGender.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lbGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbGender.setText("Gender:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))))
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lbName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbSurname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                    .addComponent(lbAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbGender, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(rbFem, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbMale))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfAge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(43, 43, 43)
-                .addComponent(jLabel3)
-                .addGap(37, 37, 37)
-                .addComponent(jLabel4)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel5)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(lbTitle)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbName))
+                        .addGap(18, 18, 18)
+                        .addComponent(tfSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbAge)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbSurname)
+                        .addGap(46, 46, 46)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbGender)
+                    .addComponent(rbMale)
+                    .addComponent(rbFem))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfUserKeyTyped
-        int size = 15;
-        char charac = evt.getKeyChar();
-        if(charac == KeyEvent.VK_ENTER)
-        authUser();
-        else {
-            if(!Character.isLetter(charac) && charac != KeyEvent.VK_BACK_SPACE) {
-                getToolkit().beep();
-                evt.consume();
-                JOptionPane.showInternalMessageDialog(this, "Solo capturar letras", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
-            }
-
-            if(pfPassword.getText().length() >= size && charac != KeyEvent.VK_ENTER) {
-                getToolkit().beep();
-                evt.consume();
-                JOptionPane.showInternalMessageDialog(this, "Máximo 5 dígitos.", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
-            }
-        }
+        
     }//GEN-LAST:event_tfUserKeyTyped
 
     private void pfPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pfPasswordKeyTyped
-        int size = 5;
-        char charac = evt.getKeyChar();
-        if(charac == KeyEvent.VK_ENTER)
-        authUser();
-        else {
-            if(!Character.isDigit(charac) && charac != KeyEvent.VK_BACK_SPACE) {
-                getToolkit().beep();
-                evt.consume();
-                JOptionPane.showInternalMessageDialog(this, "Solo capturar números", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
-            }
-
-            if(pfPassword.getText().length() >= size && charac != KeyEvent.VK_ENTER) {
-                getToolkit().beep();
-                evt.consume();
-                JOptionPane.showInternalMessageDialog(this, "Máximo 5 dígitos.", "¡ADVERTENCIA!", JOptionPane.WARNING_MESSAGE);
-            }
-        }
+        
     }//GEN-LAST:event_pfPasswordKeyTyped
 
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
-        authUser();
+
     }//GEN-LAST:event_btLogInActionPerformed
+
+    private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNameActionPerformed
+
+    private void rbFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbFemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbFemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btChangePassword;
     private javax.swing.JButton btLogIn;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lbAge;
+    private javax.swing.JLabel lbGender;
+    private javax.swing.JLabel lbName;
     private javax.swing.JLabel lbPassword;
+    private javax.swing.JLabel lbSurname;
+    private javax.swing.JLabel lbTitle;
     private javax.swing.JLabel lbUser;
     private javax.swing.JLabel lbUserIcon;
     private javax.swing.JPasswordField pfPassword;
+    private javax.swing.JRadioButton rbFem;
+    private javax.swing.JRadioButton rbMale;
+    private javax.swing.JTextField tfAge;
+    private javax.swing.JTextField tfName;
+    private javax.swing.JTextField tfSurname;
     private javax.swing.JTextField tfUser;
     // End of variables declaration//GEN-END:variables
 }
