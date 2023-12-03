@@ -29,11 +29,14 @@ public class frmInternalShowDoctor extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(222, 212, 210));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Show Doctor");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
 
+        jTable1.setBackground(new java.awt.Color(222, 212, 210));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -53,6 +56,7 @@ public class frmInternalShowDoctor extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setRowHeight(20);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

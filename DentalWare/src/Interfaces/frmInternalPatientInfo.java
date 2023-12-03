@@ -28,6 +28,7 @@ public class frmInternalPatientInfo extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
 
         lbUserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconUser_rbg.png"))); // NOI18N
         lbUserIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

@@ -3,6 +3,8 @@ package Interfaces;
 import Agenda.*;
 //import dentalware.Queue;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class frmAgenda extends javax.swing.JFrame {
 
@@ -18,6 +20,13 @@ public class frmAgenda extends javax.swing.JFrame {
         getContentPane().setBackground(colorbg);
     }
 
+    @Override
+    public Image getIconImage() {
+        Image returnValue = Toolkit.getDefaultToolkit().getImage(ClassLoader
+                .getSystemResource("images/logo_rbg.png"));
+        return returnValue;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -29,6 +38,7 @@ public class frmAgenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agenda");
+        setIconImage(getIconImage());
 
         btMenu.setBackground(new java.awt.Color(34, 111, 138));
         btMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N

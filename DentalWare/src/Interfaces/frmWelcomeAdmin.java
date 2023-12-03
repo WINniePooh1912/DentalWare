@@ -4,6 +4,7 @@ import dentalware.Assistant;
 import dentalware.Doctor;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class frmWelcomeAdmin extends javax.swing.JFrame {
@@ -19,6 +20,13 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         this.home = home;
     }
 
+    @Override
+    public Image getIconImage() {
+        Image returnValue = Toolkit.getDefaultToolkit().getImage(ClassLoader
+                .getSystemResource("images/logo_rbg.png"));
+        return returnValue;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +57,7 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome Admin");
+        setIconImage(getIconImage());
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 

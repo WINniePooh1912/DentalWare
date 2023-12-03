@@ -47,11 +47,13 @@ public class frmInternalOdontogram extends javax.swing.JInternalFrame {
         cb46 = new javax.swing.JCheckBox();
         cb47 = new javax.swing.JCheckBox();
         cb48 = new javax.swing.JCheckBox();
+        jButton2 = new javax.swing.JButton();
         pnlOdontogram = new Odontogram.pnlOdontogram();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
         setMaximumSize(new java.awt.Dimension(450, 709));
         setMinimumSize(new java.awt.Dimension(450, 709));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -247,6 +249,12 @@ public class frmInternalOdontogram extends javax.swing.JInternalFrame {
         cb48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cb48.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(cb48, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 20, 20));
+
+        jButton2.setBackground(new java.awt.Color(34, 111, 138));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Save");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
         getContentPane().add(pnlOdontogram, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -286,6 +294,7 @@ public class frmInternalOdontogram extends javax.swing.JInternalFrame {
     private javax.swing.JCheckBox cb46;
     private javax.swing.JCheckBox cb47;
     private javax.swing.JCheckBox cb48;
+    private javax.swing.JButton jButton2;
     private Odontogram.pnlOdontogram pnlOdontogram;
     // End of variables declaration//GEN-END:variables
 }

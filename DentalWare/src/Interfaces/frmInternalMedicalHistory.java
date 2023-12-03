@@ -63,15 +63,21 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         rbFem1 = new javax.swing.JRadioButton();
         rbMale1 = new javax.swing.JRadioButton();
         tfName4 = new javax.swing.JTextField();
+        btAdd = new javax.swing.JButton();
+        btEdit = new javax.swing.JButton();
+        btDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(222, 212, 210));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName.setText("Full Name:");
+        getContentPane().add(lbName, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 81, 139, -1));
 
         tfName.setForeground(new java.awt.Color(153, 153, 153));
         tfName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -82,10 +88,12 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 tfNameActionPerformed(evt);
             }
         });
+        getContentPane().add(tfName, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 79, 149, -1));
 
         lbName1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName1.setText("Odontogram:");
+        getContentPane().add(lbName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 36, 139, -1));
 
         jButton1.setBackground(new java.awt.Color(34, 111, 138));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -94,16 +102,20 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         jButton1.setText("Go to");
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 27, 153, 34));
 
         lbAge.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbAge.setText("Age:");
+        getContentPane().add(lbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 121, 70, -1));
 
         lbGender.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbGender.setText("Gender:");
+        getContentPane().add(lbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 117, 58, 38));
 
         tfAge.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        getContentPane().add(tfAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 119, 90, -1));
 
         rbFem.setBackground(new java.awt.Color(222, 212, 210));
         rbFem.setText("Female");
@@ -112,13 +124,16 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 rbFemActionPerformed(evt);
             }
         });
+        getContentPane().add(rbFem, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 117, 91, -1));
 
         rbMale.setBackground(new java.awt.Color(222, 212, 210));
         rbMale.setText("Male");
+        getContentPane().add(rbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 117, 77, -1));
 
         lbName2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName2.setText("Medical Consultation Motive:");
+        getContentPane().add(lbName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 173, 499, -1));
 
         jScrollPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
@@ -126,41 +141,54 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 202, 499, -1));
+
         lbAge1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbAge1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbAge1.setText("Habits:");
+        getContentPane().add(lbAge1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 318, 90, -1));
 
         lbAge2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbAge2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbAge2.setText("Allergies:");
+        getContentPane().add(lbAge2, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 318, 90, -1));
 
         jCheckBox1.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox1.setText("Use floss");
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 343, 170, -1));
 
         jCheckBox2.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox2.setText("Use mouthwash");
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 368, 170, -1));
 
         jCheckBox3.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox3.setText("Use fluoride toothpaste");
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 393, 170, -1));
 
         jCheckBox4.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox4.setText("Regular checkups");
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 418, 170, -1));
 
         jCheckBox5.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox5.setText("Latex Allergy");
+        getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 343, 170, -1));
 
         jCheckBox6.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox6.setText("Anesthetic Allergies");
+        getContentPane().add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 368, 170, -1));
 
         jCheckBox7.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox7.setText("Adhesive Allergies");
+        getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 393, 170, -1));
 
         jCheckBox8.setBackground(new java.awt.Color(222, 212, 210));
         jCheckBox8.setText("Toothpaste ingredients");
+        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 418, 170, -1));
 
         lbName3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName3.setText("Bucal Higiene:");
+        getContentPane().add(lbName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 463, 165, -1));
 
         tfName1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tfName1.addActionListener(new java.awt.event.ActionListener() {
@@ -168,10 +196,12 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 tfName1ActionPerformed(evt);
             }
         });
+        getContentPane().add(tfName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 461, 292, -1));
 
         lbName4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName4.setText("Present Illness:");
+        getContentPane().add(lbName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 496, 165, -1));
 
         tfName2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tfName2.addActionListener(new java.awt.event.ActionListener() {
@@ -179,10 +209,12 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 tfName2ActionPerformed(evt);
             }
         });
+        getContentPane().add(tfName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 494, 292, -1));
 
         lbName5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName5.setText("Blod Type:");
+        getContentPane().add(lbName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 529, 134, -1));
 
         tfName3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         tfName3.addActionListener(new java.awt.event.ActionListener() {
@@ -190,10 +222,12 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 tfName3ActionPerformed(evt);
             }
         });
+        getContentPane().add(tfName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 527, 292, -1));
 
         lbName6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbName6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbName6.setText("Medical Observations:");
+        getContentPane().add(lbName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 560, 495, -1));
 
         jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
@@ -201,9 +235,12 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 583, 495, -1));
+
         lbGender1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lbGender1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbGender1.setText("Pregnant:");
+        getContentPane().add(lbGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 694, 243, 48));
 
         rbFem1.setBackground(new java.awt.Color(222, 212, 210));
         rbFem1.setText("Yes");
@@ -212,9 +249,11 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 rbFem1ActionPerformed(evt);
             }
         });
+        getContentPane().add(rbFem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 706, 91, -1));
 
         rbMale1.setBackground(new java.awt.Color(222, 212, 210));
         rbMale1.setText("No");
+        getContentPane().add(rbMale1, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 706, 77, -1));
 
         tfName4.setForeground(new java.awt.Color(153, 153, 153));
         tfName4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -225,151 +264,40 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
                 tfName4ActionPerformed(evt);
             }
         });
+        getContentPane().add(tfName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 79, 169, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCheckBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(82, 82, 82)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(jCheckBox7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lbName6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbGender1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(rbFem1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(rbMale1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lbName4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(359, 359, 359))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lbName3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(359, 359, 359))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lbAge1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbAge2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(158, 158, 158))
-                            .addComponent(lbName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lbAge, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(lbGender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbFem, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbMale, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(30, 30, 30)
-                                .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfName4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lbName1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbName5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfName3, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                                    .addComponent(tfName1)
-                                    .addComponent(tfName2))))
-                        .addGap(25, 25, 25))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbName1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbName)
-                    .addComponent(tfName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbAge)
-                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbGender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rbMale)
-                    .addComponent(rbFem))
-                .addGap(18, 18, 18)
-                .addComponent(lbName2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbAge1)
-                    .addComponent(lbAge2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox8)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbName3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbName4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbName5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbName6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbGender1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rbMale1)
-                    .addComponent(rbFem1))
-                .addGap(25, 25, 25))
-        );
+        btAdd.setBackground(new java.awt.Color(34, 111, 138));
+        btAdd.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btAdd.setText("Add");
+        btAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAddActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 750, 136, -1));
+
+        btEdit.setBackground(new java.awt.Color(34, 111, 138));
+        btEdit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btEdit.setText("Edit");
+        btEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 750, 136, -1));
+
+        btDelete.setBackground(new java.awt.Color(34, 111, 138));
+        btDelete.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btDelete.setText("Delete");
+        btDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 750, 136, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -402,8 +330,23 @@ public class frmInternalMedicalHistory extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfName4ActionPerformed
 
+    private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
+
+    }//GEN-LAST:event_btAddActionPerformed
+
+    private void btEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEditActionPerformed
+
+    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAdd;
+    private javax.swing.JButton btDelete;
+    private javax.swing.JButton btEdit;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;

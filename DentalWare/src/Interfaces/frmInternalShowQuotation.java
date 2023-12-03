@@ -32,8 +32,11 @@ public class frmInternalShowQuotation extends javax.swing.JInternalFrame {
         txtNameDoctor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(222, 212, 210));
         setTitle("Quotations");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
 
+        jtQuotations.setBackground(new java.awt.Color(222, 212, 210));
         jtQuotations.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jtQuotations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -50,6 +53,7 @@ public class frmInternalShowQuotation extends javax.swing.JInternalFrame {
                 "N", "Procedure", "Total Cost", "Monthly Cost", "Monthly Payment", "Months"
             }
         ));
+        jtQuotations.setRowHeight(20);
         jScrollPane1.setViewportView(jtQuotations);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N

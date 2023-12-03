@@ -68,6 +68,7 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setTitle("Log In");
         setToolTipText("");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_rbg.png"))); // NOI18N
 
         lbUserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconUser_rbg.png"))); // NOI18N
         lbUserIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

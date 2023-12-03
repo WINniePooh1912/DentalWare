@@ -5,7 +5,9 @@ import dentalware.Doctor;
 import dentalware.User;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class frmGeneralWelcome extends javax.swing.JFrame {
     private Assistant assis = new Assistant();
@@ -16,6 +18,13 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         initComponents();
     }
 
+    @Override
+    public Image getIconImage() {
+        Image returnValue = Toolkit.getDefaultToolkit().getImage(ClassLoader
+                .getSystemResource("images/logo_rbg.png"));
+        return returnValue;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -49,6 +58,7 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome");
+        setIconImage(getIconImage());
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 
@@ -92,6 +102,11 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         menuAboutUs.setText("About Us");
 
         mItemAboutUs.setText("About us");
+        mItemAboutUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemAboutUsActionPerformed(evt);
+            }
+        });
         menuAboutUs.add(mItemAboutUs);
 
         MenuBar.add(menuAboutUs);
@@ -130,6 +145,10 @@ public class frmGeneralWelcome extends javax.swing.JFrame {
         desktopPane.add(logIn);
         logIn.show();
     }//GEN-LAST:event_mItemLogInActionPerformed
+
+    private void mItemAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAboutUsActionPerformed
+        JOptionPane.showMessageDialog(this, "Es un software diseñado para consultorios odontológicos", "Deltalware", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_mItemAboutUsActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;

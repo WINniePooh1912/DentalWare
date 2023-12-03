@@ -2,6 +2,10 @@
 package Interfaces;
 
 import dentalware.User;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class frmWelcomeAssis extends javax.swing.JFrame {
 
@@ -9,6 +13,13 @@ public class frmWelcomeAssis extends javax.swing.JFrame {
         initComponents();
     }
 
+    @Override
+    public Image getIconImage() {
+        Image returnValue = Toolkit.getDefaultToolkit().getImage(ClassLoader
+                .getSystemResource("images/logo_rbg.png"));
+        return returnValue;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -18,24 +29,126 @@ public class frmWelcomeAssis extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ImageIcon icon = new ImageIcon("src/images/bgDesktop.jpg");
+        Image img = icon.getImage();
+        desktopPane = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g) {
+                g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        MenuBar = new javax.swing.JMenuBar();
+        menuDoctors = new javax.swing.JMenu();
+        mItemAddDoct = new javax.swing.JMenuItem();
+        mItemShowDoct = new javax.swing.JMenuItem();
+        mItemShowDoct1 = new javax.swing.JMenuItem();
+        menuAssistants = new javax.swing.JMenu();
+        mItemShowAssis = new javax.swing.JMenuItem();
+        menuSupplies = new javax.swing.JMenu();
+        mItemDelSup = new javax.swing.JMenuItem();
+        mItemShowSup = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome Assitant");
+        setBackground(new java.awt.Color(222, 212, 210));
+        setIconImage(getIconImage());
+
+        desktopPane.setBackground(new java.awt.Color(222, 212, 210));
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1302, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        MenuBar.setBackground(new java.awt.Color(222, 212, 210));
+
+        menuDoctors.setText("Appointments");
+
+        mItemAddDoct.setText("Add appointment");
+        mItemAddDoct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemAddDoctActionPerformed(evt);
+            }
+        });
+        menuDoctors.add(mItemAddDoct);
+
+        mItemShowDoct.setText("Edit appointment");
+        menuDoctors.add(mItemShowDoct);
+
+        mItemShowDoct1.setText("Delete appointment");
+        menuDoctors.add(mItemShowDoct1);
+
+        MenuBar.add(menuDoctors);
+
+        menuAssistants.setText("Agenda");
+
+        mItemShowAssis.setText("Show Agenda");
+        menuAssistants.add(mItemShowAssis);
+
+        MenuBar.add(menuAssistants);
+
+        menuSupplies.setText("Supplies");
+
+        mItemDelSup.setText("Request Supplies");
+        mItemDelSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemDelSupActionPerformed(evt);
+            }
+        });
+        menuSupplies.add(mItemDelSup);
+
+        mItemShowSup.setText("Show supplies");
+        menuSupplies.add(mItemShowSup);
+
+        MenuBar.add(menuSupplies);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1326, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(desktopPane)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(desktopPane)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mItemAddDoctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemAddDoctActionPerformed
+
+    }//GEN-LAST:event_mItemAddDoctActionPerformed
+
+    private void mItemDelSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemDelSupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemDelSupActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem mItemAddDoct;
+    private javax.swing.JMenuItem mItemDelSup;
+    private javax.swing.JMenuItem mItemShowAssis;
+    private javax.swing.JMenuItem mItemShowDoct;
+    private javax.swing.JMenuItem mItemShowDoct1;
+    private javax.swing.JMenuItem mItemShowSup;
+    private javax.swing.JMenu menuAssistants;
+    private javax.swing.JMenu menuDoctors;
+    private javax.swing.JMenu menuSupplies;
     // End of variables declaration//GEN-END:variables
 }

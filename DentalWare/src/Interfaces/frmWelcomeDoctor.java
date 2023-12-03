@@ -4,6 +4,7 @@ package Interfaces;
 import dentalware.User;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class frmWelcomeDoctor extends javax.swing.JFrame {
@@ -12,6 +13,13 @@ public class frmWelcomeDoctor extends javax.swing.JFrame {
         initComponents();
     }
 
+    @Override
+    public Image getIconImage() {
+        Image returnValue = Toolkit.getDefaultToolkit().getImage(ClassLoader
+                .getSystemResource("images/logo_rbg.png"));
+        return returnValue;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +61,7 @@ public class frmWelcomeDoctor extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(222, 212, 210));
+        setIconImage(getIconImage());
 
         desktopPane.setBackground(new java.awt.Color(222, 212, 210));
 
