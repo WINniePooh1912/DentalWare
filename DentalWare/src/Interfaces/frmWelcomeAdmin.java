@@ -1,14 +1,22 @@
 package Interfaces;
 
-import dentalware.User;
+import dentalware.Assistant;
+import dentalware.Doctor;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class frmWelcomeAdmin extends javax.swing.JFrame {
-
-    public frmWelcomeAdmin(User aUsuarios) {
+    private frmGeneralWelcome home;
+    private Assistant assis;
+    private Doctor doctors;
+    
+    public frmWelcomeAdmin(frmGeneralWelcome home, Assistant assis, Doctor doctors) {
         initComponents();
+        
+        this.assis = assis;
+        this.doctors = doctors;
+        this.home = home;
     }
 
     /**
@@ -37,6 +45,7 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         menuSupplies = new javax.swing.JMenu();
         mItemDelSup = new javax.swing.JMenuItem();
         mItemShowSup = new javax.swing.JMenuItem();
+        menuLogOut = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome Admin");
@@ -101,6 +110,14 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
 
         MenuBar.add(menuSupplies);
 
+        menuLogOut.setText("Log out");
+        menuLogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuLogOutMouseClicked(evt);
+            }
+        });
+        MenuBar.add(menuLogOut);
+
         setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +153,11 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mItemDelSupActionPerformed
 
+    private void menuLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuLogOutMouseClicked
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuLogOutMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JDesktopPane desktopPane;
@@ -147,6 +169,7 @@ public class frmWelcomeAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem mItemShowSup;
     private javax.swing.JMenu menuAssistants;
     private javax.swing.JMenu menuDoctors;
+    private javax.swing.JMenu menuLogOut;
     private javax.swing.JMenu menuSupplies;
     // End of variables declaration//GEN-END:variables
 }

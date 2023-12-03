@@ -1,5 +1,7 @@
 package Interfaces;
 
+import dentalware.Assistant;
+import dentalware.Doctor;
 import dentalware.User;
 import java.awt.Color;
 import java.awt.Image;
@@ -8,23 +10,27 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class frmInternalLogIn extends javax.swing.JInternalFrame {
-
-    int counter = 3;
-    private User[] aUsuarios = new User[5];
-    frmGeneralWelcome generalMenu;
+    private frmGeneralWelcome generalMenu;
+    private Assistant assis;
+    private Doctor doctors;
+    private User admin;
     
-    public frmInternalLogIn(frmGeneralWelcome generalMenu) {
+    public frmInternalLogIn(frmGeneralWelcome generalMenu, Assistant assis, Doctor doctors, User admin) {
         initComponents();
         this.generalMenu = generalMenu;
         
+        this.assis = assis;
+        this.doctors = doctors;
+        this.admin = admin;
+        
         /**String name, int age, char sex, String address, 
             String telephone, String user, String password, int type*/
-        aUsuarios[0] = new User("Francisco Robles", 34, 'M', "Paseos del sol #24", 
+        /*aUsuarios[0] = new User("Francisco Robles", 34, 'M', "Paseos del sol #24", 
                 "33 1625 8596", "admin", "98765", 0);
         aUsuarios[1] = new User("Daniela Sandoval", 30, 'F', "Av. Rincones de soledad", 
                 "33 4859 8456", "doctor", "45654", 1);
         aUsuarios[2] = new User("Miranda Ortega", 25, 'F', "Osa mayor 8957", 
-                "33 1523 4865", "assis", "1234", 2);
+                "33 1523 4865", "assis", "1234", 2);*/
         
         Color colorbg = new Color(222, 212, 210);
         getContentPane().setBackground(colorbg);
@@ -151,46 +157,51 @@ public class frmInternalLogIn extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void authUser() {
+    private boolean authUser() {
         // obtener textos de usuario y contraseña
         String usr = tfUser.getText();
         String ctr = pfPassword.getText();
-        boolean valido = false;
+        boolean valid = false;
         // System.out.println("Sí inicio we");
         
         if(!usr.isEmpty() && !ctr.isEmpty()) {
             // System.out.println("Sí comienzo a buscar we");
             // bandera para determinar validez de usuario
             // validar el acceso o no
-            for(int i = 0; i < counter; i++) {
-                // System.out.println("buscando");
-                if (aUsuarios[i].getUser().equals(usr) && aUsuarios[i].getPassword().equals(ctr)) {
-                    if(aUsuarios[i].getType() == 0) {
-                        frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(aUsuarios[i]);
-                        frmAdmin.setVisible(true);
-                        generalMenu.setVisible(false);
-                        valido = true;
-                    } else if(aUsuarios[i].getType() == 1) {
-                        frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(aUsuarios[i]);
-                        frmDoct.setVisible(true);
-                        generalMenu.setVisible(false);
-                        valido = true;
-                    } else if(aUsuarios[i].getType() == 2) {
-                        frmWelcomeAssis frmAssis = new frmWelcomeAssis(aUsuarios[i]);
-                        frmAssis.setVisible(true);
-                        generalMenu.setVisible(false);
-                        valido = true;
-                    }
+            while(assis != null || doctors != null || admin != null) {
+                if(admin.getUser().equals(usr) && admin.getPassword().equals(ctr)) {
+                    frmWelcomeAdmin frmAdmin = new frmWelcomeAdmin(generalMenu, assis, doctors);
+                    frmAdmin.setVisible(true);
+                    generalMenu.setVisible(false);
+                    valid = true;
                     break;
                 }
+                if(assis.getUser().equals(usr) && assis.getPassword().equals(ctr)) {
+                    /*frmWelcomeAssis frmAssis = new frmWelcomeAssis(generalMenu, assis, doctors);
+                    frmAssis.setVisible(true);
+                    generalMenu.setVisible(false);
+                    valid = true;
+                    break;*/
+                }
+                if(doctors.getUser().equals(usr) && doctors.getPassword().equals(ctr)) {
+                    /*frmWelcomeDoctor frmDoct = new frmWelcomeDoctor(generalMenu, assis, doctors);
+                    frmDoct.setVisible(true);
+                    generalMenu.setVisible(false);
+                    valid = true;
+                    break;*/
+                }
+                assis = assis.getNext();
+                doctors = doctors.getNext();
             }
-            if (!valido) {
+            tfUser.setText("");
+            pfPassword.setText("");
+            tfUser.requestFocus();
+            if (!valid)
                 // System.out.println("Sí llegué we");
                 JOptionPane.showInternalMessageDialog(this, "El usuario o la contraseña\ningresados son incorrectos", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
-            }
-        } else {
+        } else
             JOptionPane.showInternalMessageDialog(this, "Asegurese de llenar\ntodos los campos", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
-        }
+        return false;
     }
     
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed

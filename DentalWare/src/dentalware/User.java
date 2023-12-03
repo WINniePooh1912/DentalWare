@@ -1,18 +1,16 @@
 package dentalware;
 
 public class User {
-    String name;
-    int age;
-    char sex;
-    String address;
-    String telephone;
-    String user;
-    String password;
-    int type;
+    private String name;
+    private int age;
+    private char sex;
+    private String address;
+    private String telephone;
+    private String user;
+    private String password;
+    private int type;
 
-    public User() {
-    }
-
+    public User() { }    
     public User(String name, int age, char sex, String address, 
             String telephone, String user, String password, int type) {
         this.name = name;
@@ -88,4 +86,5 @@ public class User {
     public void setType(int type) {
         this.type = type;
     }
+        
 }
