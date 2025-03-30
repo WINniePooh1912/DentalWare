@@ -26,7 +26,7 @@ DentalWare es un sistema de gestión para un consultorio odontológico, desarrol
 ## Estructura del Proyecto
 ```
 DentalWare/
-├──DentalWare/
+├── DentalWare/
 │   ├── src/
 │   │   ├── Agenda/          # Componentes para mostrar el calendario
 │   │   ├── Interfaces/      # Formularios para las vistas del proyecto
